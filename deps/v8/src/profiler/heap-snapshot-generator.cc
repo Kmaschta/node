@@ -1302,8 +1302,6 @@ void V8HeapExplorer::ExtractMapReferences(int entry, Map* map) {
                          constructor_or_backpointer,
                          Map::kConstructorOrBackPointerOffset);
   } else {
-    DCHECK(constructor_or_backpointer->IsJSFunction() ||
-           constructor_or_backpointer->IsNull(map->GetIsolate()));
     SetInternalReference(map, entry, "constructor", constructor_or_backpointer,
                          Map::kConstructorOrBackPointerOffset);
   }
